@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <ul>
+        <li>Egri csillagok — Gárdonyi Géza</li>
+        <li>A kőszívű ember fiai — Jókai Mór</li>
+        <li>A kis herceg — Antoine de Saint-Exupéry</li>
+        <li>1984 — George Orwell</li>
+        <li>Száz év magány — Gabriel García Márquez</li>
+        <li>A gyűrűk ura — J. R. R. Tolkien</li>
+        <li>Bűn és bűnhődés — Fjodor Dosztojevszkij</li>
+        <li>Az aranyember — Jókai Mór</li>
+        <li>Anna Karenina — Lev Tolsztoj</li>
+        <li>Az alkimista — Paulo Coelho</li>
+        <li>Harry Potter és a bölcsek köve — J. K. Rowling</li>
+        <li>Tüskevár — Fekete István</li>
+    </ul>
+
+    <script>
+        //nodeList
+        const nodeListLi=document.querySelectorAll('li')
+        const arrFromNodeList=Array.from(nodeListLi,(obj)=>obj.textContent)
+        console.log(arrFromNodeList);
+        //for ciklussal
+        for(const obj of arrFromNodeList){
+            console.log(obj);
+        }
+
+
+        //spread példák
+        let arr1=[1, 2, 3, 2, 2, 2, 3, 3, 1, 1, 6, 5, 5]
+        arr1=[...arr1, 100]
+        console.log(arr1);
+
+        let arr2=[7657, 219, 314]
+        let arr3=[...arr1, ...arr2]
+        console.log(arr3);
+
+        let max=Math.max(...arr3)
+        console.log(max);
+
+        let pers={
+            id: 1,
+            name: "Alma",
+            year: 2001
+        }
+        pers={...pers, year: 2007, address:"Budaörs"}
+        console.log(pers);
+        
+        //egyedi értékek tömbje
+        const arrFromSet=[...new Set(arr1)]
+        console.log(arrFromSet);
+
+        let set =new Set(arr1)
+        console.log(set);
+        console.log(Array.from(set));
+
+    </script>
+</body>
+</html>
